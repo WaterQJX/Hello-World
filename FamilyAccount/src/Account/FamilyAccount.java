@@ -9,48 +9,48 @@ import java.util.Scanner;
  */
 public class FamilyAccount {
     public static void main(String[] args) {
-        int balance = 10000; //Éú»îÆğÊ¼»ù½ğ
-        String details = "ÊÕÖ§\tÕË»§½ğ¶î\tÊÕÖ§½ğ¶î\tËµ Ã÷\n";
+        int balance = 10000; //ç”Ÿæ´»èµ·å§‹åŸºé‡‘
+        String details = "æ”¶æ”¯\tè´¦æˆ·é‡‘é¢\tæ”¶æ”¯é‡‘é¢\tè¯´ æ˜\n";
         boolean isFlag = true;
         while(isFlag){
-            System.out.println("-----------------¼ÒÍ¥ÊÕÖ§¼ÇÕËÈí¼ş----------------");
+            System.out.println("-----------------å®¶åº­æ”¶æ”¯è®°è´¦è½¯ä»¶----------------");
             System.out.println();
-            System.out.println("                   1 ÊÕÖ§Ã÷Ï¸");
-            System.out.println("                   2 µÇ¼ÇÊÕÈë");
-            System.out.println("                   3 µÇ¼ÇÖ§³ö");
-            System.out.println("                   4 ÍË³ö\n");
-            System.out.print("                   ÇëÑ¡Ôñ(1-4): ");
+            System.out.println("                   1 æ”¶æ”¯æ˜ç»†");
+            System.out.println("                   2 ç™»è®°æ”¶å…¥");
+            System.out.println("                   3 ç™»è®°æ”¯å‡º");
+            System.out.println("                   4 é€€å‡º\n");
+            System.out.print("                   è¯·é€‰æ‹©(1-4): ");
 
-            char selection = Utility.readMenuSelection(); //»ñÈ¡ÓÃ»§Ñ¡Ôñ
+            char selection = Utility.readMenuSelection(); //è·å–ç”¨æˆ·é€‰æ‹©
             switch (selection){
                 case '1':
-                    System.out.println("-----------------µ±Ç°ÊÕÖ§Ã÷Ï¸----------------");
+                    System.out.println("-----------------å½“å‰æ”¶æ”¯æ˜ç»†----------------");
                     System.out.println(details);
                     System.out.println("--------------------------------------------");
                     break;
                 case '2':
-                    System.out.println("-------------------ÊÕÈëÍ³¼Æ------------- ----");
-                    System.out.print("ÇëÊäÈëÊÕÈë½ğ¶î: ");
+                    System.out.println("-------------------æ”¶å…¥ç»Ÿè®¡------------- ----");
+                    System.out.print("è¯·è¾“å…¥æ”¶å…¥é‡‘é¢: ");
                     int amount1 = Utility.readNumber();
-                    System.out.print("ÇëÊäÈëÊÕÈëËµÃ÷: ");
+                    System.out.print("è¯·è¾“å…¥æ”¶å…¥è¯´æ˜: ");
                     String info1 = Utility.readString();
                     balance += amount1;
-                    details += "ÊÕÈë" + "\t" + balance + "\t" + amount1 + "\t\t" + info1 + "\n";
-                    System.out.println("-------------------µÇ¼ÇÍê³É------------------");
+                    details += "æ”¶å…¥" + "\t" + balance + "\t" + amount1 + "\t\t" + info1 + "\n";
+                    System.out.println("-------------------ç™»è®°å®Œæˆ------------------");
                     break;
                 case '3':
-                    System.out.println("-------------------Ö§³öÍ³¼Æ------------------");
-                    System.out.print("ÇëÊäÈëÖ§³ö½ğ¶î: ");
+                    System.out.println("-------------------æ”¯å‡ºç»Ÿè®¡------------------");
+                    System.out.print("è¯·è¾“å…¥æ”¯å‡ºé‡‘é¢: ");
                     int amount2 = Utility.readNumber();
-                    System.out.print("ÇëÊäÈëÖ§³öËµÃ÷: ");
+                    System.out.print("è¯·è¾“å…¥æ”¯å‡ºè¯´æ˜: ");
                     String info2 = Utility.readString();
                     balance -= amount2;
-                    details += "Ö§³ö" + "\t" + balance + "\t" + amount2 + "\t\t" + info2 + "\n";
-                    System.out.println("-------------------µÇ¼ÇÍê³É------------------");
+                    details += "æ”¯å‡º" + "\t" + balance + "\t" + amount2 + "\t\t" + info2 + "\n";
+                    System.out.println("-------------------ç™»è®°å®Œæˆ------------------");
                     break;
                 case '4':
-                    //System.out.println("4 ÍË³ö");
-                    System.out.print("È·ÈÏÊÇ·ñÍË³ö(Y/N): ");
+                    //System.out.println("4 é€€å‡º");
+                    System.out.print("ç¡®è®¤æ˜¯å¦é€€å‡º(Y/N): ");
                     char isExit = Utility.readConfirmSelection();
                     if(isExit == 'Y'){
                         isFlag = false;

@@ -5,21 +5,21 @@ import java.util.Scanner;
 /**
  * @Auther: qjx
  * @Date: 2020/4/21 11 22
- * @Description: ¹¤¾ßÀà,ÓÃÓÚ»ñÈ¡ÕıÈ·µÄÊäÈë
+ * @Description: å·¥å…·ç±»,ç”¨äºè·å–æ­£ç¡®çš„è¾“å…¥
  */
 
 
 public class Utility {
     private static Scanner input = new Scanner(System.in);
 
-    //ÓÃÓÚ½çÃæ²Ëµ¥Ñ¡Ôñ£¬¶ÁÈ¡¼üÅÌÊäÈë£¬ÓÃ»§Ó¦ÊäÈë'1' ~ '4'Ö®¼äµÄÈÎÒâÖµ£¬²¢ÇÒ·µ»Ø¸ÃÖµ¡£
+    //ç”¨äºç•Œé¢èœå•é€‰æ‹©ï¼Œè¯»å–é”®ç›˜è¾“å…¥ï¼Œç”¨æˆ·åº”è¾“å…¥'1' ~ '4'ä¹‹é—´çš„ä»»æ„å€¼ï¼Œå¹¶ä¸”è¿”å›è¯¥å€¼ã€‚
     public static char readMenuSelection(){
         char c;
         while(true){
             String str = readKeyBoard(1);
             c = str.charAt(0);
             if(c > '4' || c < '1'){
-                System.out.print("ÎŞĞ§ÊäÈë£¬ÇëÖØĞÂÊäÈë: ");
+                System.out.print("æ— æ•ˆè¾“å…¥ï¼Œè¯·é‡æ–°è¾“å…¥: ");
             }else {
                 break;
             }
@@ -28,7 +28,7 @@ public class Utility {
         return c;
     }
 
-    //´Ó¼üÅÌ¶ÁÈëÊÕÈëºÍÖ§³ö½ğ¶î£¬²¢ÇÒ½ğ¶î²»ÄÜ³¬¹ı4Î»£¬²¢·µ»Ø¡£
+    //ä»é”®ç›˜è¯»å…¥æ”¶å…¥å’Œæ”¯å‡ºé‡‘é¢ï¼Œå¹¶ä¸”é‡‘é¢ä¸èƒ½è¶…è¿‡4ä½ï¼Œå¹¶è¿”å›ã€‚
     public static int readNumber(){
         int money;
         while(true){
@@ -37,19 +37,19 @@ public class Utility {
                 money = Integer.parseInt(str);
                 break;
             }catch(NumberFormatException e){
-                System.out.print("Êı×ÖÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë: ");
+                System.out.print("æ•°å­—è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥: ");
             }
         }
         return money;
     }
 
-    //ÓÃÓÚÊÕÈëºÍÖ§³öµÄËµÃ÷£¬´Ó¼üÅÌ½ÓÊÕÒ»¸ö²»³¬¹ı8Î»µÄ×Ö·û´®£¬²¢·µ»Ø¡£
+    //ç”¨äºæ”¶å…¥å’Œæ”¯å‡ºçš„è¯´æ˜ï¼Œä»é”®ç›˜æ¥æ”¶ä¸€ä¸ªä¸è¶…è¿‡8ä½çš„å­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ã€‚
     public static String readString(){
         String str = readKeyBoard(8);
         return str;
     }
 
-    //ÓÃÓÚÈ·ÈÏÑ¡ÔñµÄÊäÈë£¬´Ó¼üÅÌ¶ÁÈ¡'Y' »ò 'N'£¬²¢·µ»Ø¡£
+    //ç”¨äºç¡®è®¤é€‰æ‹©çš„è¾“å…¥ï¼Œä»é”®ç›˜è¯»å–'Y' æˆ– 'N'ï¼Œå¹¶è¿”å›ã€‚
     public static char readConfirmSelection(){
         char c;
         while(true) {
@@ -58,7 +58,7 @@ public class Utility {
             if (c == 'Y' || c == 'N') {
                 break;
             }else{
-                System.out.print("ÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë: ");
+                System.out.print("è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥: ");
             }
         }
         return c;
@@ -66,13 +66,13 @@ public class Utility {
 
 
 
-    //´Ó¼üÅÌ¶ÁÈë³¤¶ÈÎª1~limitÖ®¼äµÄ×Ö·û¡£
+    //ä»é”®ç›˜è¯»å…¥é•¿åº¦ä¸º1~limitä¹‹é—´çš„å­—ç¬¦ã€‚
     private static String readKeyBoard(int limit){
         String line = "";
         while(input.hasNext()){
             line = input.nextLine();
             if(line.length() < 1 || line.length() > limit){
-                System.out.print("ÊäÈë³¤¶È(²»´óÓÚ" + limit + ")´íÎó,ÇëÖØĞÂÊäÈë: ");
+                System.out.print("è¾“å…¥é•¿åº¦(ä¸å¤§äº" + limit + ")é”™è¯¯,è¯·é‡æ–°è¾“å…¥: ");
                 continue;
             }
             break;
